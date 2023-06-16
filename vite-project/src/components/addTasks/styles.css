@@ -1,0 +1,28 @@
+
+.addTasks {
+  display: flex;
+  margin-bottom: 16px;
+  /* justify-content: space-between; */
+}
+
+.div-add-task-input {
+  flex: 60%;
+}
+
+.add-task-input {
+  padding: 10px;
+  height: 40px;
+  width: 100%;
+
+  font-size: 16px;
+
+  border-radius: 5px;
+  border: none;
+
+  background-color: #444;
+}
+
+.div-add-task-button {
+  flex: 30%;
+  margin-left: 10px;
+}
