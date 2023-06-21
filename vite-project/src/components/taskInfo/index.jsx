@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router-dom'
-import Button from '../Button'
+import Button from '../button'
 import './styles.css'
 
 
