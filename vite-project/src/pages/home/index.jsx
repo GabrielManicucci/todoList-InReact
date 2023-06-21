@@ -9,6 +9,7 @@ import Header from "../../components/header";
 import InfoTask from '../../components/taskInfo'
 
 import { v4 as uuidv4 } from 'uuid';
+import Footer from "../../components/footer"
 
 
 
@@ -80,6 +81,8 @@ export default function Home() {
           <Route path="/:taskTitle" element={ <InfoTask /> } />
         </Routes>
       </div>
+
+      <Footer />
     </Router>
   )
 }
