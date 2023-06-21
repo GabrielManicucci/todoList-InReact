@@ -79,20 +79,6 @@ export default function Home() {
 
           <Route path="/:taskTitle" element={ <InfoTask /> } />
         </Routes>
-        {/* <Route  
-          path="/" 
-          exact
-          render={ () => (
-            <>
-              <AddTasks handleTaskAddition={handleTaskAddition}/>
-              <FatherTask 
-                tasks={tasks} 
-                handleTaskClick={handleTaskClick}   
-                handleTaskDeletion={handleTaskDeletion} 
-              />
-            </>
-          )}
-        /> */}
       </div>
     </Router>
   )

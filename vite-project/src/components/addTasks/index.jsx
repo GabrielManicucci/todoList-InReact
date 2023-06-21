@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Button from "../Button";
+import Button from "../button";
 import './styles.css'
 
 
@@ -9,7 +9,7 @@ export default function AddTasks({handleTaskAddition}) {
 
   function handleInputData(data) {
     setInputData(data)
-    console.log(inputData)
+    // console.log(inputData)
   }
 
   function handleAddtaskClick() {
