@@ -15,9 +15,5 @@
 }
 
 .button:hover {
-  /* background-color: #444;
-  color: chartreuse;
-  border: 2px solid chartreuse; */
-
   filter: brightness(80%);
 }

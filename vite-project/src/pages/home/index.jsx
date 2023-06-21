@@ -1,8 +1,12 @@
 
 import { useState } from "react"
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+
 import AddTasks from "../../components/addTasks"
 import "./styles.css"
 import FatherTask from "../../components/FatherTask"
+import Header from "../../components/header";
+import InfoTask from '../../components/taskInfo'
 
 import { v4 as uuidv4 } from 'uuid';
 
@@ -22,7 +26,8 @@ export default function Home() {
       completed: false
     },
   ])
-
+  
+  // conclusion task
   function handleTaskClick(taskId) {
     const newTasks = tasks.map( task => {
       if (taskId === task.id) return { ... task, completed: !task.completed }
@@ -33,6 +38,7 @@ export default function Home() {
     setTasks(newTasks)
   }
 
+  // add new task
   function handleTaskAddition(taskTitle) {
     const newTasks = [... tasks, {
       id: uuidv4(),
@@ -43,6 +49,7 @@ export default function Home() {
     setTasks(newTasks)
   }
 
+  // delete task
   function handleTaskDeletion(taskId) {
     const newTasks = tasks.filter( task => task.id !== taskId )
 
@@ -55,13 +62,38 @@ export default function Home() {
 
   
   return (
-    <div className="home">
-      <AddTasks handleTaskAddition={handleTaskAddition} />
-      <FatherTask 
-        tasks={tasks} 
-        handleTaskClick={handleTaskClick}   
-        handleTaskDeletion={handleTaskDeletion} 
-      />
-    </div>
+    <Router>
+      <div className="home">
+        <Header />
+        <Routes>
+          <Route path="/" element={
+            <>
+              <AddTasks handleTaskAddition={handleTaskAddition}/>
+              <FatherTask 
+                tasks={tasks} 
+                handleTaskClick={handleTaskClick}   
+                handleTaskDeletion={handleTaskDeletion} 
+              />
+            </>}
+          />
+
+          <Route path="/:taskTitle" element={ <InfoTask /> } />
+        </Routes>
+        {/* <Route  
+          path="/" 
+          exact
+          render={ () => (
+            <>
+              <AddTasks handleTaskAddition={handleTaskAddition}/>
+              <FatherTask 
+                tasks={tasks} 
+                handleTaskClick={handleTaskClick}   
+                handleTaskDeletion={handleTaskDeletion} 
+              />
+            </>
+          )}
+        /> */}
+      </div>
+    </Router>
   )
 }

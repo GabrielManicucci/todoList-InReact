@@ -1,10 +1,9 @@
 .home {
-  max-width: 500px;
-  /* min-height: 300px; */
+  max-width: 578px;
   max-height: 700px;
 
   margin: 30px auto;
-  padding: 28px;
+  padding: 36px;
 
   border: 2px solid chartreuse;
   border-radius: 10px;
@@ -22,10 +21,12 @@
   background-color: #444;
   border-radius: 5px;
   height: 50px;
-  /* width: 5px; */
 }
 
-/* ::-webkit-scrollbar-button {
-  width: 5px;
-} */
+@media (max-width: 578px) {
+  .home {
+    border: none;
+    padding: 24px;
+  }
+}
 

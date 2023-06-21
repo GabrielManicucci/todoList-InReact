@@ -1,8 +1,7 @@
 
 .addTasks {
   display: flex;
-  /* justify-content: space-between; */
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
 .div-add-task-input {
