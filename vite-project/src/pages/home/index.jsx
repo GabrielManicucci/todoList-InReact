@@ -1,6 +1,7 @@
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import axios from 'axios'
 
 import AddTasks from "../../components/addTasks"
 import "./styles.css"
@@ -15,18 +16,19 @@ import Footer from "../../components/footer"
 
 export default function Home() {
 
-  const [tasks, setTasks] = useState([
-    {
-      id: uuidv4(),
-      title: 'estudar programação',
-      completed: false
-    },
-    {
-      id: uuidv4(),
-      title: 'trabalhar',
-      completed: false
-    },
-  ])
+  const [tasks, setTasks] = useState([])
+
+  useEffect( () => {
+    const handleApi = async () => {
+      const response = await axios.get('https://jsonplaceholder.cypress.io/todos?_limit=10')
+      const data = response.data
+      console.log(data)
+
+      setTasks(data)
+    }
+
+    handleApi()
+  }, [])
   
   // conclusion task
   function handleTaskClick(taskId) {

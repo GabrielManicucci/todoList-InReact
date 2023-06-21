@@ -29,6 +29,13 @@
   justify-content: space-between;
 }
 
+.buttons {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
 .task-content button {
   width: 30px;
   height: 100%;

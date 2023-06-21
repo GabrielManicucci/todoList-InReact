@@ -7,6 +7,5 @@ export default function Footer() {
         <p>Click in task text for to conclude task</p>
       </footer>
     </>
-    
   )
 }

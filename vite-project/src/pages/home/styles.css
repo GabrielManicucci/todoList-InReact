@@ -8,7 +8,7 @@
   border: 2px solid chartreuse;
   border-radius: 10px;
 
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
